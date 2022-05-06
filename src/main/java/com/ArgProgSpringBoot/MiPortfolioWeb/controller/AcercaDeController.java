@@ -6,6 +6,7 @@ package com.ArgProgSpringBoot.MiPortfolioWeb.controller;
 
 import com.ArgProgSpringBoot.MiPortfolioWeb.model.AcercaDe;
 import com.ArgProgSpringBoot.MiPortfolioWeb.service.AcercaDeService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,8 +28,8 @@ public class AcercaDeController {
     
     @GetMapping ("/acercade")
     @ResponseBody
-    public void obtenerAcercaDe(){
-        acdServ.obtenerAcercaDe();
+    public List<AcercaDe> obtenerAcercaDe(){
+        return acdServ.obtenerAcercaDe();
     
     }
     

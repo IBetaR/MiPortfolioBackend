@@ -5,6 +5,7 @@
 package com.ArgProgSpringBoot.MiPortfolioWeb.service;
 
 import com.ArgProgSpringBoot.MiPortfolioWeb.model.AcercaDe;
+import java.util.List;
 
 /**
  *
@@ -13,7 +14,7 @@ import com.ArgProgSpringBoot.MiPortfolioWeb.model.AcercaDe;
 public interface IAcercaDeService {
     
     public AcercaDe crearAcercaDe (AcercaDe acercade);
-    public void obtenerAcercaDe ();
+    public List<AcercaDe> obtenerAcercaDe ();
     public void borrarAcercaDe (Long id);
     public AcercaDe obtenerAcercaDe (Long id);
     public void modificarAcercaDe(AcercaDe acercade);

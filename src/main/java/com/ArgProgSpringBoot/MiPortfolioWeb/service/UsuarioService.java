@@ -26,7 +26,7 @@ public class UsuarioService {
     
     public boolean isUserEnabled(IniciarSesionDto iniciarsesiondto){
         boolean isUserEnabled = false;
-        List<Usuario> usuarios = userRepo.finByEmailandIsEnabledTrue(iniciarsesiondto.getEmail());
+        List<Usuario> usuarios = userRepo.findByEmailAndIsEnabledTrue(iniciarsesiondto.getEmail());
         if (!usuarios.isEmpty()){
             Usuario usuario = usuarios.get(0);
             if (passwordEncoder.matches(iniciarsesiondto.getPassword(), usuario.getPassword()))
@@ -38,7 +38,7 @@ public class UsuarioService {
     
     public void crearUsuario(Usuario usuario) throws Exception {
         
-        List<Usuario> usuarios = userRepo.finByEmailandIsEnabledTrue(usuario.getEmail());
+        List<Usuario> usuarios = userRepo.findByEmailAndIsEnabledTrue(usuario.getEmail());
         if(!usuarios.isEmpty()){
             throw new Exception ("El email ya está registrado.");
         }else{

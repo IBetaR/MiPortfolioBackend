@@ -6,6 +6,7 @@ package com.ArgProgSpringBoot.MiPortfolioWeb.service;
 
 import com.ArgProgSpringBoot.MiPortfolioWeb.model.AcercaDe;
 import com.ArgProgSpringBoot.MiPortfolioWeb.repository.AcercaDeRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +20,8 @@ public class AcercaDeService implements IAcercaDeService {
     public AcercaDeRepository acdRepo;
     
     @Override
-    public void obtenerAcercaDe(){
-        acdRepo.findAll();
+    public List<AcercaDe> obtenerAcercaDe(){
+        return acdRepo.findAll();
     }
     
     @Override
